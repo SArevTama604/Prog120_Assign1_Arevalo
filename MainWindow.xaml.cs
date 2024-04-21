@@ -26,8 +26,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse(TextBox1.Text);
-                double num2 = double.Parse(TextBox2.Text);
+                double num1 = double.Parse("MainWindow.TextBox1");
+                double num2 = double.Parse("MainWindow.TextBox2");
                 double result = num1 + num2;
                 MessageBox.Show($"{num1} + {num2} = {result}");
             }
@@ -42,8 +42,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse(TextBox1.Text);
-                double num2 = double.Parse(TextBox2.Text);
+                double num1 = double.Parse("MainWindow.TextBox1");
+                double num2 = double.Parse("MainWindow.TextBox2");
                 double result = num1 - num2;
                 MessageBox.Show($"{num1} - {num2} = {result}");
             }
@@ -58,8 +58,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse(TextBox1.Text);
-                double num2 = double.Parse(TextBox2.Text);
+                double num1 = double.Parse("MainWindow.TextBox1");
+                double num2 = double.Parse("MainWindow.TextBox2");
                 double result = num1 * num2;
                 MessageBox.Show($"{num1} * {num2} = {result}");
             }
@@ -74,8 +74,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse(TextBox1.Text);
-                double num2 = double.Parse(TextBox2.Text);
+                double num1 = double.Parse("MainWindow.TextBox1");
+                double num2 = double.Parse("MainWindow.TextBox2");
                 if (num2 == 0)
                 {
                     throw new DivideByZeroException();
@@ -89,7 +89,7 @@ namespace Prog120_Assign1_Arevalo
             }
             catch (DivideByZeroException)
             {
-                MessageBox.Show($"Division of {TextBox1.Text} by zero.");
+                var unused = MessageBox.Show($"Division of {"MainWindow.TextBox1"} by zero.");
             }
         }
     }
