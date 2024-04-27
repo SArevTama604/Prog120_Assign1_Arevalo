@@ -13,9 +13,6 @@ namespace Prog120_Assign1_Arevalo
 {
     public partial class MainWindow : Window
     {
-        public object TextBox1 { get; private set; }
-        public object TextBox2 { get; private set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -26,8 +23,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse("MainWindow.TextBox1");
-                double num2 = double.Parse("MainWindow.TextBox2");
+                double num1 = double.Parse(TextBox1.Text);
+                double num2 = double.Parse(TextBox2.Text);
                 double result = num1 + num2;
                 MessageBox.Show($"{num1} + {num2} = {result}");
             }
@@ -42,8 +39,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse("MainWindow.TextBox1");
-                double num2 = double.Parse("MainWindow.TextBox2");
+                double num1 = double.Parse(TextBox1.Text);
+                double num2 = double.Parse(TextBox2.Text);
                 double result = num1 - num2;
                 MessageBox.Show($"{num1} - {num2} = {result}");
             }
@@ -58,8 +55,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse("MainWindow.TextBox1");
-                double num2 = double.Parse("MainWindow.TextBox2");
+                double num1 = double.Parse(TextBox1.Text);
+                double num2 = double.Parse(TextBox2.Text);
                 double result = num1 * num2;
                 MessageBox.Show($"{num1} * {num2} = {result}");
             }
@@ -74,8 +71,8 @@ namespace Prog120_Assign1_Arevalo
         {
             try
             {
-                double num1 = double.Parse("MainWindow.TextBox1");
-                double num2 = double.Parse("MainWindow.TextBox2");
+                double num1 = double.Parse(TextBox1.Text);
+                double num2 = double.Parse(TextBox2.Text);
                 if (num2 == 0)
                 {
                     throw new DivideByZeroException();
@@ -89,7 +86,7 @@ namespace Prog120_Assign1_Arevalo
             }
             catch (DivideByZeroException)
             {
-                var unused = MessageBox.Show($"Division of {"MainWindow.TextBox1"} by zero.");
+                MessageBox.Show($"Division by zero is not allowed.");
             }
         }
     }
